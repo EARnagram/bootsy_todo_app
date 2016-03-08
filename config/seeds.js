@@ -4,19 +4,19 @@ var Todo = require('../models/todo');
 
 var todos = [
   {
-    task:      "Refer to yourself by your bootsified name.",
-    completed: false,
-    bootsyLvl: 3,
+    task:        "Refer to yourself by your bootsified name.",
+    completed:   false,
+    bootsyLevel: 3,
   },
   {
-    task:      "Wear star-shaped glasses.",
-    completed: true,
-    bootsyLvl: 1,
+    task:        "Wear star-shaped glasses.",
+    completed:   true,
+    bootsyLevel: 1,
   },
   {
-    task:      "Create a Bootsified name for yourself. Try it out.",
-    completed: false,
-    bootsyLvl: 2,
+    task:        "Create a Bootsified name for yourself. Try it out.",
+    completed:   false,
+    bootsyLevel: 2,
   },
 ];
 
@@ -28,7 +28,7 @@ Todo.remove({}, function(err) {
     } else {
       console.log("Database seeded with " + todos.length  + " todos.");
       mongoose.connection.close();
-      process.exit();
     }
+    process.exit();
   });
 });

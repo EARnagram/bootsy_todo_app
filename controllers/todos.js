@@ -12,6 +12,8 @@ module.exports = {
 //  GET TODOS - INDEX
 //||||||||||||||||||||||||||--
 function index(req, res, next) {
+  console.log("Bootsy's on a roll, baby!!");
+
   Todo.find({}, function(err, todos) {
     if (err) next(err);
 
@@ -24,11 +26,11 @@ function index(req, res, next) {
 //||||||||||||||||||||||||||--
 function show(req, res, next){
   var id = req.params.id;
+  console.log("Get me that Bootsy, baby!!", id);
 
   Todo.findById(id, function(err, todo){
     if (err) next(err);
 
-    // return that todo as JSON
     res.json(todo);
   });
 };
@@ -37,17 +39,12 @@ function show(req, res, next){
 // POST TODOS - CREATE
 //||||||||||||||||||||||||||--
 function create(req, res, next) {
-  var newTodo = new Todo();
+  console.log("Brand new Bootsy todo, baby!!", req.body);
 
-  newTodo.task      = req.body.task;
-  newTodo.bootsyLvl = req.body.bootsyLvl;
-  newTodo.completed = req.body.completed;
-
+  var newTodo = new Todo(req.body);
   newTodo.save(function(err, savedTodo) {
     if (err) next(err)
-    // log a message
-    console.log("That's a Bootsy todo, baby!!")
-    // return the todo
+
     res.json(savedTodo);
   });
 };
@@ -55,26 +52,26 @@ function create(req, res, next) {
 //||||||||||||||||||||||||||--
 // PUT TODO - UPDATE
 //||||||||||||||||||||||||||--
-function update(req, res) {
+function update(req, res, next) {
   var id = req.params.id;
+  console.log("Show bootsy that body, baby!!", id, req.body);
 
   Todo.findById(id, function(err, todo) {
-    if (err) next(err);
+    if (err || !todo) {
+      next(err);
+    } else {
+      // set the new todo information if it exists in the request
+      if (req.body.task)        todo.task        = req.body.task;
+      if (req.body.bootsyLevel) todo.bootsyLevel = req.body.bootsyLevel;
+      if (req.body.completed)   todo.completed   = req.body.completed;
 
-    // set the new todo information if it exists in the request
-    if (req.body.task)      todo.task      = req.body.task;
-    if (req.body.bootsyLvl) todo.bootsyLvl = req.body.bootsyLvl;
-    if (req.body.completed) todo.completed = req.body.completed;
+      todo.save(function(err, updatedTodo) {
+        if (err) next(err);
 
-    // save the todo
-    todo.save(function(err, updatedTodo) {
-      if (err) next(err);
-
-      // log a message
-      console.log("Yabba dabba, doozy, baba - we changed it up!");
-      // return the todo
-      res.json(updatedTodo);
-    });
+        console.log("Yabba dabba, doozy, baba - we changed it up!");
+        res.json(updatedTodo);
+      });
+    }
   });
 }
 
@@ -83,8 +80,11 @@ function update(req, res) {
 //||||||||||||||||||||||||||--
 function destroy(req, res, next) {
   var id = req.params.id;
+  console.log("Say todaloo todo, Bootsy!!", id);
 
-  Todo.remove({"_id" : id}, function(err) {
+  Todo.remove({"_id" : id}, function(err, todo) {
+    // Only triggers if there is a major problem; will not fail
+    // if trying to remove something that isn't there…
     if (err) next(err);
 
     // Let us know if it's a successful delete

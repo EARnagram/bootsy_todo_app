@@ -1,4 +1,4 @@
-console.log("todo.js v2 loaded!");
+console.log("todo.js v2 ajax loaded!");
 
 
 var Todo = function(jsonTodo) {
@@ -8,8 +8,8 @@ var Todo = function(jsonTodo) {
   // });
   jsonTodo || (jsonTodo = {});
   this._id         = jsonTodo._id;
-  this.task        = jsonTodo.task        || "";
-  this.bootsyLevel = jsonTodo.bootsyLevel || 0;
+  this.task        = jsonTodo.task;
+  this.bootsyLevel = jsonTodo.bootsyLevel;
 };
 
 // Add index (ie, all) static (ie, class method) to the Todo constructor
@@ -58,19 +58,20 @@ Todo.prototype.save = function() {
   // if _id doesn't exist, then create, otherwise update!
   var promise;
 
-  if (!this._id) {
+  if (!this.data._id) {
     console.log(JSON.stringify(this))
     promise = $.ajax({
       type: "POST",
       url:  "/api/todos",
-      data: JSON.stringify(this), // pass the current state of this instance
-      contentType: "json"
+      data: JSON.stringify(this.data), // pass the current state of this instance
+      contentType: "application/json"
     });
   } else {
     promise = $.ajax({
       type: "PUT",
       url:  "/api/todos/" + encodeURIComponent(self._id),
-      data: JSON.stringify(this) // pass the current state of this instance
+      data: JSON.stringify(this.data), // pass the current state of this instance
+      contentType: "application/json"
     });
   }
 

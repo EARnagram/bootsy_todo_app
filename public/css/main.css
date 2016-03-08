@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'kopio';
+  src: url('../fonts/kopio_639.ttf');
+  src: url('../fonts/kopio_639.ttf') format('truetype');
+}
+
 a {
   color: #00B7FF;
 }
@@ -9,29 +15,46 @@ body {
 header {
   margin: 30px auto;
   background-color: black;
+  -webkit-box-shadow: 0px 11px 21px 9px rgba(250,202,222,0.5);
+  -moz-box-shadow: 0px 11px 21px 9px rgba(250,202,222,0.5);
+  box-shadow: 0px 11px 21px 9px rgba(250,202,222,0.5);
+  border-radius: 12px;
 }
 
 .nav-item {
-  border: 1px solid black;
+  border-width: 3px;
+  border-bottom-width: 3px;
+  border-bottom-color: rebeccapurple;
+  border-bottom-style: solid;
   border-radius: 5px;
-  margin-bottom: -20px;
-  padding: 10px;
+  margin-bottom: -10px;
+  padding-top: 10px;
   text-align: center;
   cursor: pointer;
+  font-family: 'kopio';
+}
+
+.nav-item > a {
+  color: rebeccapurple;
+}
+
+.selected {
+  border-bottom-color: #FACADE;
+  color: #FACADE;
 }
 
 .heading {
-  background: url(http://d1ya1fm0bicxg1.cloudfront.net/2015/09/promoted-media_55f773384500f.jpg) no-repeat center center fixed;
-  height: 400px;
+  background: url(http://d1ya1fm0bicxg1.cloudfront.net/2015/09/promoted-media_55f773384500f.jpg) no-repeat center fixed;
+  height: 450px;
   text-align: center;
   color: white;
   margin-top: 30px;
 }
 
 .heading > h1 {
-  padding-top: 80px;
-}
-
-.heading > h3 {
-  padding-top: 80px;
+  padding-top: 30px;
+  font-family: 'kopio';
+  font-size: 6em;
+  line-height: 1.7;
+  text-shadow: -1px 7px 3px rgba(233, 203, 224, 1);
 }

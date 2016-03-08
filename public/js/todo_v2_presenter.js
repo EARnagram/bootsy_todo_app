@@ -9,6 +9,7 @@ var Todo = function(jsonTodo) {
   this.data._id         = jsonTodo._id;
   this.data.task        = jsonTodo.task;
   this.data.bootsyLevel = jsonTodo.bootsyLevel;
+  this.data.completed   = jsonTodo.completed;
 };
 
 // Define a template and render function for all todos.
@@ -41,5 +42,5 @@ Todo.prototype.get$Element = function() {
 
 // Use:
 //
-// t = new Todo({_id: "32458972349857", task: "Do housework.", bootsyLevel: 1 });
+// t = new Todo({ task: "Do housework.", bootsyLevel: 1 });
 // t.$element();

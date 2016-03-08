@@ -1,3 +1,5 @@
+var Todo = require("../models/todo");
+
 module.exports = {
   home:  home,
   about: about,
@@ -9,7 +11,9 @@ function home(req, res, next) {
 };
 
 function about(req, res, next) {
-  res.render('pages/about');
+  Todo.find({}, function(err, todos) {
+    res.render('pages/about', {numberOfTodos: todos.length});
+  });
 };
 
 function todos(req, res, next) {

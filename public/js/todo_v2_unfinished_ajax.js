@@ -1,17 +1,5 @@
 console.log("todo.js v2 ajax loaded!");
 
-
-var Todo = function(jsonTodo) {
-  // var self = this;
-  // Object.keys(jsonTodo).forEach(function(key) {
-  //   self[key] = jsonTodo[key];
-  // });
-  jsonTodo || (jsonTodo = {});
-  this._id         = jsonTodo._id;
-  this.task        = jsonTodo.task;
-  this.bootsyLevel = jsonTodo.bootsyLevel;
-};
-
 // Add index (ie, all) static (ie, class method) to the Todo constructor
 Todo.all = function() {
   return $.ajax({
@@ -84,32 +72,6 @@ Todo.prototype.save = function() {
     }
   );
 }
-
-// createTodo({bootsyLevel: 0, task: "Clean the gutters."}).then(
-//   function(r) {
-//     console.log("Success:", r);
-//   },
-//   function(e) {
-//     console.log("Failed:", e);
-//   }
-// );
-
-function updateTodo(id, todo) {
-  return $.ajax({
-    type: "PUT",
-    url:  "/api/todos/" + encodeURIComponent(id),
-    data: todo
-  });
-}
-
-// updateTodo("56de5f3f54a2182d70f99ccf", { bootsyLevel: 4 }).then(
-//   function(r) {
-//     console.log("Success:", r);
-//   },
-//   function(e) {
-//     console.log("Failed:", e);
-//   }
-// );
 
 function destroyTodo(id) {
   return $.ajax({

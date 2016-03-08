@@ -25,7 +25,7 @@
         <h4 class="custom-font">Baby, I Gotta…</h4>
         <article class="my-life todos-column">
           <ul class="todos-list" id="personalTodo">
-            <li class="todo-item bootsy1">Wear star-shaped glasses <input type="checkbox" name="todo" value="completed" /> <span class="remove-item">X</span></li>
+            <li class="todo-item bootsy1">Wear star-shaped glasses <input type="checkbox" name="todo[completed]" checked /> <span class="remove-item">X</span></li>
           </ul>
         </article>
       </div>
@@ -33,7 +33,11 @@
         <h4 class="custom-font">Bootsy Todos</h4>
         <article class="choices todos-column">
           <ul class="todos-list" id="bootsyTodo">
-            <li class="todo-item bootsy5">Refer to yourself in the 3rd person by your bootsified name <input type="checkbox" name="todo" value="completed" /> <span class="remove-item">X</span></li>
+            <li class="todo-item bootsy5">
+              Refer to yourself in the 3rd person by your bootsified name
+              <input type="checkbox" name="todo[completed]" />
+              <span class="remove-item">X</span>
+            </li>
           </ul>
         </article>
       </div>

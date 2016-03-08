@@ -1,4 +1,4 @@
-console.log("todo.js v1 loaded!");
+console.log("todo1_basic_ajax loaded!");
 
 
 // Using all of the below:

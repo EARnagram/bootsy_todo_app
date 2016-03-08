@@ -1,7 +1,7 @@
 var _ = require('lodash');
 
 var localEnvVars = {
-  TITLE:      'bootsy_todo_spa',
+  TITLE:      'Boootsy Todos',
   SAFE_TITLE: 'bootsy_todo_spa'
 };
 

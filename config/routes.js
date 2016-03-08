@@ -9,10 +9,10 @@ var todosController   = require('../controllers/todos');
 router.get('/', welcomeController.index);
 
 // todos resource paths:
-router.get('/todos',        todosController.index);
-router.get('/todos/:id',    todosController.show);
-router.post('/todos',       todosController.create);
-router.put('/todos/:id',    todosController.update);
+router.get(   '/todos',     todosController.index);
+router.get(   '/todos/:id', todosController.show);
+router.post(  '/todos',     todosController.create);
+router.put(   '/todos/:id', todosController.update);
 router.delete('/todos/:id', todosController.destroy);
 
 module.exports = router;

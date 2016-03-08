@@ -13,11 +13,9 @@ module.exports = {
 //||||||||||||||||||||||||||--
 function index(req, res, next) {
   Todo.find({}, function(err, todos) {
-    if (err) {
-      res.send(err);
-    } else {
-      res.json(todos);
-    }
+    if (err) next(err);
+
+    res.json(todos);
   });
 };
 
@@ -28,7 +26,7 @@ function show(req, res, next){
   var id = req.params.id;
 
   Todo.findById(id, function(err, todo){
-    if (err) res.send(err);
+    if (err) next(err);
 
     // return that todo as JSON
     res.json(todo);
@@ -46,7 +44,7 @@ function create(req, res, next) {
   newTodo.completed = req.body.completed;
 
   newTodo.save(function(err, savedTodo) {
-    if (err) res.send(err)
+    if (err) next(err)
     // log a message
     console.log("That's a Bootsy todo, baby!!")
     // return the todo
@@ -61,8 +59,7 @@ function update(req, res) {
   var id = req.params.id;
 
   Todo.findById(id, function(err, todo) {
-
-    if (err) res.send(err);
+    if (err) next(err);
 
     // set the new todo information if it exists in the request
     if (req.body.task)      todo.task      = req.body.task;
@@ -71,9 +68,8 @@ function update(req, res) {
 
     // save the todo
     todo.save(function(err, updatedTodo) {
-      if (err) {
-        res.send(err);
-      }
+      if (err) next(err);
+
       // log a message
       console.log("Yabba dabba, doozy, baba - we changed it up!");
       // return the todo
@@ -89,7 +85,8 @@ function destroy(req, res, next) {
   var id = req.params.id;
 
   Todo.remove({"_id" : id}, function(err) {
-    if (err) res.send(err);
+    if (err) next(err);
+
     // Let us know if it's a successful delete
     res.json({ message: "Just let that todo chill, baby!" });
   });

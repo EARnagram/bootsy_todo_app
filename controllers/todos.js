@@ -29,9 +29,11 @@ function show(req, res, next){
   console.log("Get me that Bootsy, baby!!", id);
 
   Todo.findById(id, function(err, todo){
-    if (err) next(err);
-
-    res.json(todo);
+    if (err || !todo) {
+      next(err);
+    } else {
+      res.json(todo);
+    }
   });
 };
 

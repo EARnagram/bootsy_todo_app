@@ -61,7 +61,7 @@ Todo.prototype.$Element = function() {
     self.data.completed = !self.data.completed;
 
     self.save().then(function() {
-      self.$el.remove(); // When successful, remove self from DOM, and
+      self.$el.detach(); // When successful, remove self from DOM, and
                          // then re-attach elsewhere on page.
       if (self.data.completed) {
         $personalTodo.append(self.$el);

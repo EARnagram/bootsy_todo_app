@@ -4,16 +4,13 @@
   src: url('../fonts/kopio_639.ttf') format('truetype');
 }
 
-a {
-  color: #00B7FF;
-}
-
 a:link,
 a:visited,
 a:hover,
 a:active {
-  color: inherit;
+  color: #00B7FF;
   text-decoration: none;
+  cursor: pointer;
 }
 
 body {

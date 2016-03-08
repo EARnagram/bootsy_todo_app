@@ -2,17 +2,19 @@ var express = require('express'),
     router  = new express.Router();
 
 // Require controllers.
-var welcomeController = require('../controllers/welcome');
-var todosController   = require('../controllers/todos');
+var pagesController = require('../controllers/pages');
+var todosController = require('../controllers/todos');
 
 // root path:
-router.get('/', welcomeController.index);
+router.get('/',      pagesController.home);
+router.get('/about', pagesController.about);
+router.get('/todos', pagesController.todos);
 
 // todos resource paths:
-router.get(   '/todos',     todosController.index);
-router.get(   '/todos/:id', todosController.show);
-router.post(  '/todos',     todosController.create);
-router.put(   '/todos/:id', todosController.update);
-router.delete('/todos/:id', todosController.destroy);
+router.get(   '/api/todos',     todosController.index);
+router.get(   '/api/todos/:id', todosController.show);
+router.post(  '/api/todos',     todosController.create);
+router.put(   '/api/todos/:id', todosController.update);
+router.delete('/api/todos/:id', todosController.destroy);
 
 module.exports = router;

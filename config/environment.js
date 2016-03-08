@@ -1,8 +1,8 @@
 var _ = require('lodash');
 
 var localEnvVars = {
-  TITLE:      'Boootsy Todos',
-  SAFE_TITLE: 'bootsy_todo_spa'
+  TITLE:      "Bootsy's Todo App",
+  SAFE_TITLE: 'bootsy_todo'
 };
 
 // Merge all environmental variables into one object.

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <$- include('../partials/head') $>
+</head>
+<body>
+  <$- include('../partials/header', {page: 'todos'}) $>
+  <div class="container todos-content">
+    <h2 class="custom-font">Todos for Yous!</h2>
+    <div class="row">
+      <div class="one-half column">
+        <h4 class="custom-font">Baby, I Gotta…</h4>
+        <article class="my-life todos-column">
+          <ul class="todos-list" id="personalTodo">
+            <li>Incorporated Todo</li>
+          </ul>
+        </article>
+      </div>
+      <div class="one-half column">
+        <h4 class="custom-font">Bootsy Todos</h4>
+        <article class="choices todos-column">
+          <ul class="todos-list" id="bootsyTodo">
+            <li>Bootsy Todo</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+  <$- include('../partials/scripts') $>
+</body>
+</html>

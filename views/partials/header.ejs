@@ -4,9 +4,9 @@
   </div>
   <div class="row navbar">
     <div class="one column"></div>
-    <div class="selected nav-item two columns">Home</div>
-    <div class="nav-item two columns">About</div>
-    <div class="nav-item two columns">Todos</div>
+    <div class="<$= page === 'home' ? 'selected' : '' $> nav-item two columns"><a href="/">Home</a></div>
+    <div class="<$= page === 'about' ? 'selected' : '' $> nav-item two columns"><a href="/about">About</a></div>
+    <div class="<$= page === 'todos' ? 'selected' : '' $> nav-item two columns"><a href="/todos">Todos</a></div>
   </div>
   <br>
 </header>

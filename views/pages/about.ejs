@@ -1,4 +1,10 @@
-<script type="text/template" id="aboutTemplate">
+<!DOCTYPE html>
+<html>
+<head>
+  <$- include('../partials/head') $>
+</head>
+<body>
+  <$- include('../partials/header', {page: 'about'}) $>
   <div class="container about-content">
     <h3 class="custom-font">About Bootsy Collins</h3>
     <main>
@@ -18,12 +24,13 @@
         <a href="http://www.thefunkuniversity.com/">The Funk University</a> it
         only seemed appropriate that he offer a Todo list website to help his
         fans become a little more like him. "Make Me Bootsy, Baby" offers you
-        <%= todoLength %> todos to incorporate into your life. They come in differing degrees
+        <%%= todoLength %> todos to incorporate into your life. They come in differing degrees
         of Bootsy style - feel free to work your way up to the really Bootsy
         challenges! Get started right away by looking at the fresh
         <a>todos</a> section of our website, baby!</p>
       </article>
     </main>
   </div>
-
-</script>
+  <$- include('../partials/scripts') $>
+</body>
+</html>

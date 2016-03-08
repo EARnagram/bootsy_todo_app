@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
 var todoSchema = mongoose.Schema({
-  task:      String,
-  bootsyLvl: Number,
+  task:      { type: String,  required: true },
+  bootsyLvl: { type: Number,  required: true, min: 0 },
   completed: { type: Boolean, default: false }
 });
 

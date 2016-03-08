@@ -1,4 +1,4 @@
-# Make Me Bootsy, Baby
+# Make Me Bootsy, Baby!
 
 ![Bootsy Baby](http://2ap6ndle7dn3hxy4u3p0d587.wpengine.netdna-cdn.com/wp-content/uploads/2010/11/bootsy-collins-bootzilla.jpeg)
 
@@ -23,7 +23,7 @@
 
 ![](http://okp-cdn.okayplayer.com/wp-content/uploads/2014/09/JBsPhoto.jpg)
 
-Today we'll be building a Todo app all about [Bootsy Collins](https://en.wikipedia.org/wiki/Bootsy_Collins), The Man Who Put Bass In Yer Face (back left, here seen in the JBs).
+Today we'll be building a Todo app all about [Bootsy Collins](https://en.wikipedia.org/wiki/Bootsy_Collins), The Man Who Put Bass In Yer Face (back left, seen here in the JBs - James Brown's Band).
 
 As a lousy bass player, I always wondered, how did Bootsy get so dang good at bass?
 
@@ -31,7 +31,9 @@ As a poor dresser, I always wondered, how did Bootsy get so dang good at dressin
 
 As a poor chiller, I alwasy wondered, how did Bootsy chill so dang hard!?
 
-Quickly, I realized I needed an application that would help me become more like Bootsy Collins. Could you build me a todo app that could help me lead a more Bootsy lifestyle?
+Quickly, I realized I needed an application that would help me become more like Bootsy Collins. 
+
+**Could you build me a todo app that could help me lead a more Bootsy lifestyle?**
 
 ## Pre-Planning
 
@@ -39,15 +41,15 @@ Let's quickly look at what the final app will resemble.
 
 **Home Page**: No data is being pulled from the DB.
 
-![home page](./public/readme_images/home_page.png)
+![home page](./readme_images/home_page.png)
 
 **About Page**: Needs only the amount of todos in the db - should be solved by server-side templating.
 
-![about page](./public/readme_images/about_page.png)
+![about page](./readme_images/about_page.png)
 
 **Todos Page**: This page needs a significant amount of data to CRUD our Todo resource. Additionally, if we're planning to handle CRUDing between page-loads, we'll need client-side templates with LoDash. 
 
-![todos page](./public/readme_images/todos_page.png)
+![todos page](./readme_images/todos_page.png)
 
 #### Take 5 minutes to review the code.
 
@@ -120,6 +122,7 @@ We'll be building this app for the remainder of the day. Here's how I expect we'
    - Then try and post the todo to your database - check in Postman to see if it's persisted
    - Finally, take that new data and prepend/append it to the Bootsy todo column
 6. Once you've finished all the actions, you're done!
+   - [Deploy your app](https://github.com/ga-students/WDI_DTLA_8/tree/master/work/w07/d05/instructor/applanation)!
    - **BONUS**: Use jQueryUI's drag and drop feature, and remove the ugly checkbox!
 
 Today's going to be a busy day, so enjoy your break and then lets get to it.

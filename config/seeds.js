@@ -27,7 +27,7 @@ Todo.remove({}, function(err) {
       console.log(err);
     } else {
       console.log("Database seeded with " + todos.length  + " todos.");
-      mongoose.disconnect();
+      mongoose.connection.close();
       process.exit();
     }
   });

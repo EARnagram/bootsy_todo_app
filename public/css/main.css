@@ -105,5 +105,32 @@ header {
 
 .about-p {
   font-size: 1.4em;
-  font-family: helvetica;
+  font-family: futura;
+}
+
+.todos-content {
+  margin: 20px auto;
+}
+
+.todos-column {
+  height: 500px;
+  border-radius: 10px;
+}
+
+.choices {
+  background-color: lightpink;
+  color: black;
+}
+
+.my-life {
+  background-color: purple;
+  color: white;
+}
+
+.todos-list {
+  padding-top: 10px;
+  font-family: futura;
+  text-align: center;
+  list-style-type: none;
+  font-size: 1.2em;
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <$- include('../partials/head') $>
+</head>
+<body>
+  <$- include('../partials/header', { page: 'todos' }) $>
+  <div class="container todos-content">
+    <h2 class="custom-font">Todos for Yous!</h2>
+    <form class="new-todo" id="new-todo">
+      <input class="input-task" type="text" name='todo[name]' id="todo-task" placeholder="Do What You Gotta Do, Bobble!">
+      <select name="todo[bootsyLevel]" id="todo-bootsy-level">
+        <option value="" disabled selected>Bootsy Level</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button class="submit-button" type="submit" value='Gimme Some More'>Gimme Some More!</button>
+    </form>
+    <div class="row">
+      <div class="one-half column">
+        <h4 class="custom-font">Baby, I Gotta…</h4>
+        <article class="my-life todos-column">
+          <ul class="todos-list" id="personalTodo">
+            <!-- <li class="todo-item bootsy1">
+              Wear star-shaped glasses
+              <input type="checkbox" name="todo[completed]" checked />
+              <span class="remove-item">X</span>
+            </li> -->
+          </ul>
+        </article>
+      </div>
+      <div class="one-half column">
+        <h4 class="custom-font">Bootsy Todos</h4>
+        <article class="choices todos-column">
+          <ul class="todos-list" id="bootsyTodo">
+            <!-- <li class="todo-item bootsy5">
+              Refer to yourself in the 3rd person by your bootsified name
+              <input type="checkbox" name="todo[completed]" />
+              <span class="remove-item">X</span>
+            </li> -->
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+  <$- include('../partials/scripts') $>
+</body>
+</html>

@@ -8,7 +8,6 @@ var todosController = require('../controllers/todos');
 // root path:
 router.get('/',      pagesController.home);
 router.get('/about', pagesController.about);
-router.get('/todos', pagesController.todos);
 
 // todos resource paths:
 router.get(   '/api/todos',     todosController.index);

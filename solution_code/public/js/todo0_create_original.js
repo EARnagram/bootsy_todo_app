@@ -231,13 +231,26 @@ $(document).ready(function() {
     var todoHTML  = renderTodo(todo);
     var $todoHTML = $(todoHTML);
 
+    console.log("CHECK THIS:", $todoHTML)
+
     $todoHTML.find("input[type=checkbox]").on("change", function(evt) {
+
+      // APOLOGIES GUYS! This is a mess, but I wanted to get you working
+      // solution code. With more time, this would be significantly
+      // cleaner. Just know, I'm jumping through hoops to access the
+      // data about the todo.
+      var idOfTodo = $($(this)[0]).parent().attr('id').substring(5);
+      var taskOfTodo = $($(this)[0]).parent().text().replace(/\s+/g, '').slice(0, -1);
+      var bLOfTodo = $($(this)[0]).parent().attr('class').split('').pop();
+      var compOfTodo = $(this)[0].checked;
+
       var currentTodoData = {
-        _id:         "",   // Dear Ezra,
-        task:        "",   // At this point you have to figure out how
-        bootsyLevel: 0,    // to pull this data out of the $todoHTML
-        completed:   false // element (using find and parsing)... Sorry.
+        _id:         idOfTodo,
+        task:        taskOfTodo,
+        bootsyLevel: bLOfTodo,
+        completed:   compOfTodo
       };
+
 
       updateTodo(currentTodoData._id, currentTodoData)
          .then(

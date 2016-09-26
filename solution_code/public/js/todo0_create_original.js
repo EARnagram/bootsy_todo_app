@@ -239,9 +239,9 @@ $(document).ready(function() {
       // solution code. With more time, this would be significantly
       // cleaner. Just know, I'm jumping through hoops to access the
       // data about the todo.
-      var idOfTodo = $($(this)[0]).parent().attr('id').substring(5);
+      var idOfTodo   = $($(this)[0]).parent().attr('id').substring(5);
       var taskOfTodo = $($(this)[0]).parent().text().replace(/\s+/g, '').slice(0, -1);
-      var bLOfTodo = $($(this)[0]).parent().attr('class').split('').pop();
+      var bLOfTodo   = $($(this)[0]).parent().attr('class').split('').pop();
       var compOfTodo = $(this)[0].checked;
 
       var currentTodoData = {
